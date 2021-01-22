@@ -1,0 +1,9 @@
+mayavi
+numpy
+matplotlib
+pickle5
+pandas
+seaborn
+tensorboard
+pytorch
+python2.7

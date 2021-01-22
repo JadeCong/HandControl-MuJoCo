@@ -1,0 +1,11 @@
+bio_ik
+moveit
+common_resources
+sr-config
+sr-ros-interface-ethercat
+ros_ethercat
+sr_common
+sr_core
+sr-ros-interface
+sr_tools
+ros_control_robot

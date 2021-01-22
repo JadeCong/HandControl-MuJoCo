@@ -1,0 +1,48 @@
+thumb quaterion
+
+test coordinate system: x:right/y:forward/z:up
+real coordinate system: x:right/y:backward/z:down
+
+original: quat="0.990237 0.0412644 -0.0209178 -0.13149"(z:-14.962/y:-3.001/x:4.349)[z:down/y:backward/x:right]
+now: quat="0.733 0.462 -0.191 -0.462"(z:-45/y:-45/x:45)[z:down/y:backward/x:right](look good)
+modified: quat="0.800 -0.462 0.191 0.331"(z:45/y:0/x:-60)[z:up/y:forward/x:right]
+final correct: quat1="0.800 0.462 0.191 -0.331"(z:-45/y:0/x:60)[z:down/y:backward/x:right]
+          quat2="0.723 0.392 -0.360 -0.440"(z:-45/y:-60/x:30)[z:down/y:backward/x:right]
+          quat3="0.800 0.462 -0.191 -0.331"(z:-45/y:0/x:60)[z:down/y:backward/x:right][euler angle order: zyx]//一般欧拉角顺序为zyx
+          quat4="0.854 0.354 -0.146 -0.354"(z:-45/y:0/x:45)[z:down/y:backward/x:right][euler angle order: zyx]
+
+
+
+
+
+
+xml file:
+
+<!-- ======= THUMB ======= -->
+<body name="thumb0" pos="0.00835752 -0.0206978 -0.010093" quat="0.990237 0.0412644 -0.0209178 -0.13149">
+<inertial pos="0.00863339 -0.000156884 -0.000945846" diaginertia="4.50769e-007 4.48758e-007 2.35017e-007" mass="0.00336696" quat="0.408795 0.551643 0.541079 0.485602"/>
+<joint name="thumb_ABD" type="hinge" pos="0 0 0" axis="-0.5 0.85355339 -0.14644661" range="0 2.07"/>
+<!-- <joint name="thumb_ABD" type="hinge" pos="0 0 0" axis="0 0 1" range="0 30"/> -->
+<geom type="mesh" mesh="thumb0"/>
+<body name="thumb1" pos="0.0209172 -0.00084 0.0014476">
+<inertial pos="0.019024 0.000361131 -0.000186763" diaginertia="9.88001e-007 9.45125e-007 5.32989e-007" mass="0.00596213" quat="0.5208 0.469572 0.484571 0.522934"/>
+<joint type="hinge" name="thumb_MCP" pos="0 0 0" range="0 1.03" axis="0 0 -1"/>
+<!-- <joint name="thumb_MCP" type="hinge" pos="0 0 0" axis="0 0 -1" range="10 30"/> -->
+<geom type="mesh" mesh="thumb1"/>
+<site name="thumb_proximal" pos="0.0173 -0.008 0.0009" size=".015 .0075 .01"/>
+<body name="thumb2" pos="0.0335 0 -0.0007426">
+<inertial pos="0.0188965 0.000375725 0.00065381" diaginertia="9.96692e-007 9.64948e-007 5.14416e-007" mass="0.00599792" quat="0.502274 0.484638 0.475673 0.535333"/>
+<joint type="hinge" name="thumb_PIP" pos="0 0 0" range="0 1.03" axis="0 0 -1"/>
+<!-- <joint name="thumb_PIP" type="hinge" pos="0 0 0" axis="0 0 -1" range="10 30"/> -->
+<geom type="mesh" mesh="thumb2"/>
+<site name="thumb_medial" pos="0.0182 -0.008 0.0015" size=".015 .0075 .01"/>
+<body name="thumb3" pos="0.0335 0 0.0010854">
+<inertial pos="0.0188965 0.000375725 0.00065381" diaginertia="9.96692e-007 9.64948e-007 5.14416e-007" mass="0.00599792" quat="0.502274 0.484638 0.475673 0.535333"/>
+<joint type="hinge" name="thumb_DIP" pos="0 0 0" range="-0.819 1.28" axis="0 0 -1"/>
+<!-- <joint name="thumb_DIP" type="hinge" pos="0 0 0" axis="0 0 -1" range="10 30"/> -->
+<geom type="mesh" mesh="thumb3"/>
+<site name="thumb_distal" pos="0.0156 -0.007 0.0003" size=".015 .0075 .01" axisangle="0 0 1 0.2"/>
+<site class="IMU" name="thumb_IMU" pos="0.0099 -0.00052 0" size=".003 .003 .003" quat=".5 .5 .5 .5"/>
+</body>
+</body>
+</body>

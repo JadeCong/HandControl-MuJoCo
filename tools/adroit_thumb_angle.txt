@@ -1,0 +1,31 @@
+thumb_original:
+<body name="thbase" pos="0.034 -0.009 0.029" axisangle="0  1 0  0.785" >
+                                        <inertial pos="0 0 0" mass="0.010" diaginertia="0.00001 0.00001 0.00001"/>
+                                        <joint name="THJ4" type="hinge" pos="0 0 0" axis="0 0 -1" range="-1.047 1.047"  user="1121"/>
+                                        <geom class="D_Vizual" name="V_thbase" type="box" group="1" pos="0 0 0" size="0.001 0.001 0.001" />
+                                        <!--Proximal-->
+                                        <body name="thproximal" pos="0 0 0">
+                                                <inertial pos="-0.000 -0.000 0.017" quat="0.982 -0.000 0.001 0.191" mass="0.016" diaginertia="0.00001 0.00001 0.00001"/>
+                                                <joint name="THJ3" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.309"  user="1120"/>
+                                                <geom class="D_Vizual" name="V_thproximal" mesh="TH3_z"/>
+                                                <geom class="DC_Hand" name="C_thproximal" type="capsule" pos="0 0 .019" size=".013 .019" rgba=".4 .5 .6 .1"/>
+                                                <!--Hub-->
+                                                <body name="thhub" pos="0 0 0.038">
+                                                        <inertial pos="0 0 0" mass="0.002" diaginertia="0.00001 0.00001 0.00001"/>
+                                                        <joint name="THJ2" type="hinge" pos="0 0 0" axis="1 0 0" range="-0.262 0.262"  user="1119"/>
+                                                        <geom class="D_Vizual" name="V_thhub" type="box" group="1" pos="0 0 0" size="0.001 0.001 0.001"/>
+                                                        <!--Middle-->
+                                                        <body name="thmiddle" pos="0 0 0">
+                                                                <inertial pos="0.000 -0.000 0.016" quat="1.000 -0.001 -0.007 0.003" mass="0.016" diaginertia="0.00001 0.00001 0.00001"/>
+                                                                <joint name="THJ1" type="hinge" pos="0 0 0" axis="0 1 0" range="-0.524 0.524"  user="1118"/>
+                                                                <geom class="D_Vizual" name="V_thmiddle" mesh="TH2_z"/>
+                                                                <geom class="DC_Hand" name="C_thmiddle" type="capsule" pos="0 0 .016" size=".011 .016"/>
+                                                                <!--Distal-->
+                                                                <body name="thdistal" pos="0 0 0.032">
+                                                                        <inertial pos="0.000 -0.000 0.016" quat="0.999 -0.005 -0.047 0.005" mass="0.016" diaginertia="0.00001 0.00001 0.00001"/>
+                                                                        <joint name="THJ0" type="hinge" pos="0 0 0" axis="0 1 0" range="-1.571 0"  user="1117"/>
+                                                                        <geom class="D_Vizual" name="V_thdistal" mesh="TH1_z"/>
+                                                                        <geom class="DC_Hand" name="C_thdistal" type="capsule" pos="0 0 .013" size=".00918 .013" condim="4"/>
+                                                                        <site name="S_thtip"    pos="0.000 0 0.0275" group="3"/>
+                                                                        <site class="D_Touch" name="Tch_thtip" size="0.005 0.011 0.016" pos="-.005 0 0.02" />
+
