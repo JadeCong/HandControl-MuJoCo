@@ -12,10 +12,11 @@
 *.exe
 
 # IDE Config Misc
-.vscode/
+# .vscode/
 .idea/
 
 # Project Config Misc
 build/
 install/
+logs/
 __pycache__/
